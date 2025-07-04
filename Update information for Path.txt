@@ -1,0 +1,7 @@
+0.1.1: Initial Beta Release Update
+- “About Path 1.0 page added”
+- About Path 1.0 Q&A Added
+- About Path 1.0 feedback form added
+- Styles added to the page
+- Fixed a error where other pages when clicked on the “About Path page”, would go to a file not found page
+- Fixed an error where the pages were labeled incorrectly
