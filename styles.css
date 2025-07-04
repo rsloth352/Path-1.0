@@ -124,3 +124,18 @@ nav a:hover {
     margin-top: 37px;
     font-family: 'Readex Pro', sans-serif;
 }
+
+.contact {
+    text-align: center;
+    margin-top: 42px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 47px;
+    font-family: 'Readex Pro', sans-serif;
+    padding: 20px 0;
+    background-color: #777777;
+    color: #333;
+}
