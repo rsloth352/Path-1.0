@@ -95,8 +95,32 @@ nav a:hover {
     font-family: 'Readex Pro', sans-serif;
 }
 
-.header {
+.welcometext {
     text-align: center;
     margin-top: 20px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.description {
+    margin-top: 22px;
+    text-align: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.explore {
+    text-align: center;
+    margin-top: 27px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.features {
+    text-align: center;
+    margin-top: 32px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.whyuseit {
+    text-align: center;
+    margin-top: 37px;
     font-family: 'Readex Pro', sans-serif;
 }
