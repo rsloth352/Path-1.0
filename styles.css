@@ -1,0 +1,96 @@
+/* Navigation Bar Styles */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #222;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 24px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #4fc3f7;
+}
+
+.apptitle {
+    text-align: center;
+    margin-top: 75px;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.whatispath {
+    margin-top: 95px;
+    text-align: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.whomadepath {
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.pathfeatures {
+    margin-top: 105px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.pathupdates {
+    margin-top: 110px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.holidayupdates {
+    margin-top: 115px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.path2 {
+    margin-top: 120px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.description {
+    margin-top: 70px;
+    text-align: center;
+    font-family: 'Readex Pro', sans-serif;
+}
