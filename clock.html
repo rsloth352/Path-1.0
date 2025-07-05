@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path 1.0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="path-logo.png">
+<head>
+    <meta charset="UTF-8">
+    <title>World Clock</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #clock { font-size: 2em; margin: 20px 0; }
+        select { font-size: 1em; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>World Clock</h1>
+    <label for="timezone">Select Time Zone:</label>
+    <select id="timezone">
+        <option value="UTC">UTC</option>
+        <option value="America/New_York">New York (EST/EDT)</option>
+        <option value="Europe/London">London (GMT/BST)</option>
+        <option value="Europe/Paris">Paris (CET/CEST)</option>
+        <option value="Asia/Tokyo">Tokyo (JST)</option>
+        <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
+    </select>
+    <div id="clock"></div>
+
+    <script>
+        const clock = document.getElementById('clock');
+        const timezoneSelect = document.getElementById('timezone');
+
+        function updateClock() {
+            const tz = timezoneSelect.value;
+            const now = new Date();
+            const options = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZone: tz
+            };
+            clock.textContent = now.toLocaleTimeString([], options) + ' (' + tz + ')';
+        }
+
+        timezoneSelect.addEventListener('change', updateClock);
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
