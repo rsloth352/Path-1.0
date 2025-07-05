@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path 1.0 calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="About Path.html">About Path</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="calculator-container">
+            <h2>Calculator</h2>
+            <form id="calculator" onsubmit="return false;">
+                <input type="text" id="calc-display" readonly>
+                <div class="calc-buttons">
+                    <button type="button" onclick="calcInput('7')">7</button>
+                    <button type="button" onclick="calcInput('8')">8</button>
+                    <button type="button" onclick="calcInput('9')">9</button>
+                    <button type="button" onclick="calcInput('/')">÷</button>
+                    <button type="button" onclick="calcInput('4')">4</button>
+                    <button type="button" onclick="calcInput('5')">5</button>
+                    <button type="button" onclick="calcInput('6')">6</button>
+                    <button type="button" onclick="calcInput('*')">×</button>
+                    <button type="button" onclick="calcInput('1')">1</button>
+                    <button type="button" onclick="calcInput('2')">2</button>
+                    <button type="button" onclick="calcInput('3')">3</button>
+                    <button type="button" onclick="calcInput('-')">−</button>
+                    <button type="button" onclick="calcInput('0')">0</button>
+                    <button type="button" onclick="calcInput('.')">.</button>
+                    <button type="button" onclick="calculateResult()">=</button>
+                    <button type="button" onclick="calcInput('+')">+</button>
+                    <button type="button" onclick="clearCalc()">C</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            let calcDisplay = document.getElementById('calc-display');
+            let calcValue = '';
+
+            function calcInput(val) {
+                calcValue += val;
+                calcDisplay.value = calcValue;
+            }
+
+            function calculateResult() {
+                try {
+                    calcValue = eval(calcValue).toString();
+                    calcDisplay.value = calcValue;
+                } catch {
+                    calcDisplay.value = 'Error';
+                    calcValue = '';
+                }
+            }
+
+            function clearCalc() {
+                calcValue = '';
+                calcDisplay.value = '';
+            }
+        </script>
+    </body>
+</html>
