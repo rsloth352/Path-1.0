@@ -23,26 +23,90 @@
         <div class="calculator-container">
             <h2>Calculator</h2>
             <form id="calculator" onsubmit="return false;">
-                <input type="text" id="calc-display" readonly>
-                <div class="calc-buttons">
-                    <button type="button" onclick="calcInput('7')">7</button>
-                    <button type="button" onclick="calcInput('8')">8</button>
-                    <button type="button" onclick="calcInput('9')">9</button>
-                    <button type="button" onclick="calcInput('/')">÷</button>
-                    <button type="button" onclick="calcInput('4')">4</button>
-                    <button type="button" onclick="calcInput('5')">5</button>
-                    <button type="button" onclick="calcInput('6')">6</button>
-                    <button type="button" onclick="calcInput('*')">×</button>
-                    <button type="button" onclick="calcInput('1')">1</button>
-                    <button type="button" onclick="calcInput('2')">2</button>
-                    <button type="button" onclick="calcInput('3')">3</button>
-                    <button type="button" onclick="calcInput('-')">−</button>
-                    <button type="button" onclick="calcInput('0')">0</button>
-                    <button type="button" onclick="calcInput('.')">.</button>
-                    <button type="button" onclick="calculateResult()">=</button>
-                    <button type="button" onclick="calcInput('+')">+</button>
-                    <button type="button" onclick="clearCalc()">C</button>
-                </div>
+            <input type="text" id="calc-display" readonly>
+            <div class="calc-buttons">
+                <button type="button" onclick="calcInput('7')">7</button>
+                <button type="button" onclick="calcInput('8')">8</button>
+                <button type="button" onclick="calcInput('9')">9</button>
+                <button type="button" onclick="calcInput('/')">÷</button>
+                <button type="button" onclick="calcInput('4')">4</button>
+                <button type="button" onclick="calcInput('5')">5</button>
+                <button type="button" onclick="calcInput('6')">6</button>
+                <button type="button" onclick="calcInput('*')">×</button>
+                <button type="button" onclick="calcInput('1')">1</button>
+                <button type="button" onclick="calcInput('2')">2</button>
+                <button type="button" onclick="calcInput('3')">3</button>
+                <button type="button" onclick="calcInput('-')">−</button>
+                <button type="button" onclick="calcInput('0')">0</button>
+                <button type="button" onclick="calcInput('.')">.</button>
+                <button type="button" onclick="calculateResult()">=</button>
+                <button type="button" onclick="calcInput('+')">+</button>
+                <button type="button" onclick="clearCalc()">C</button>
+            </div>
+        </div>
+        <style>
+            .calculator-container {
+            max-width: 320px;
+            margin: 40px auto;
+            padding: 24px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+            font-family: 'Readex Pro', Arial, sans-serif;
+            }
+            .calculator-container h2 {
+            text-align: center;
+            margin-bottom: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            }
+            #calc-display {
+            width: 100%;
+            height: 48px;
+            font-size: 1.5rem;
+            text-align: right;
+            margin-bottom: 18px;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #f8f8f8;
+            box-sizing: border-box;
+            }
+            .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            }
+            .calc-buttons button {
+            padding: 16px 0;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 6px;
+            background: #e0e0e0;
+            color: #222;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            }
+            .calc-buttons button:hover {
+            background: #bdbdbd;
+            }
+            .calc-buttons button:active {
+            background: #9e9e9e;
+            }
+            .calc-buttons button:nth-child(4),
+            .calc-buttons button:nth-child(8),
+            .calc-buttons button:nth-child(12),
+            .calc-buttons button:nth-child(15),
+            .calc-buttons button:nth-child(17) {
+            background: #1976d2;
+            color: #fff;
+            }
+            .calc-buttons button:nth-child(17) {
+            grid-column: span 4;
+            background: #d32f2f;
+            }
+        </style>
             </form>
         </div>
         <script>
