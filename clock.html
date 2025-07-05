@@ -5,49 +5,86 @@
     <title>Path 1.0</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="path-logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="path-logo.png">
 <head>
     <meta charset="UTF-8">
     <title>World Clock</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        #clock { font-size: 2em; margin: 20px 0; }
-        select { font-size: 1em; padding: 5px; }
+        #clock {
+            font-size: 2.5em;
+            margin: 30px auto;
+            padding: 20px 40px;
+            background: #222;
+            color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+        select, label {
+            font-size: 1em;
+            padding: 5px;
+            margin: 0 5px;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+    <div class="navigation">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Path.html">About Path</a></li>
+                <li><a href="clock.html">Clock</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+            </ul>
+        </nav>
+    </div>
     <h1>World Clock</h1>
-    <label for="timezone">Select Time Zone:</label>
-    <select id="timezone">
-        <option value="UTC">UTC</option>
-        <option value="America/New_York">New York (EST/EDT)</option>
-        <option value="Europe/London">London (GMT/BST)</option>
-        <option value="Europe/Paris">Paris (CET/CEST)</option>
-        <option value="Asia/Tokyo">Tokyo (JST)</option>
-        <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
-    </select>
+    <div class="controls">
+        <label for="timezone">Select Time Zone:</label>
+        <select id="timezone">
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">New York (EST/EDT)</option>
+            <option value="Europe/London">London (GMT/BST)</option>
+            <option value="Europe/Paris">Paris (CET/CEST)</option>
+            <option value="Asia/Tokyo">Tokyo (JST)</option>
+            <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
+        </select>
+        <label for="format">Format:</label>
+        <select id="format">
+            <option value="24">24 Hour</option>
+            <option value="12">12 Hour</option>
+        </select>
+    </div>
     <div id="clock"></div>
 
     <script>
         const clock = document.getElementById('clock');
         const timezoneSelect = document.getElementById('timezone');
+        const formatSelect = document.getElementById('format');
 
         function updateClock() {
             const tz = timezoneSelect.value;
+            const hour12 = formatSelect.value === "12";
             const now = new Date();
             const options = {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit',
-                hour12: false,
+                hour12: hour12,
                 timeZone: tz
             };
             clock.textContent = now.toLocaleTimeString([], options) + ' (' + tz + ')';
         }
 
         timezoneSelect.addEventListener('change', updateClock);
+        formatSelect.addEventListener('change', updateClock);
         setInterval(updateClock, 1000);
         updateClock();
     </script>
